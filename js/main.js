@@ -32,7 +32,8 @@ function initMap(data) {
 
     let geoJSON = L.geoJSON(data, {
         weight:2,
-        onEachFeature:getFeature
+        onEachFeature:getFeature,
+        style: getStyle
     }).addTo(map)
     
     let bounds = geoJSON.getBounds()
@@ -57,6 +58,17 @@ function getFeature(feature, layer){
         </ul>`
     )    
 
+}
+
+function getStyle(feature) {
+    let hue = (feature.properties.positiveImmigration / feature.properties.negativeImmigration)**3 *60
+    if (hue > 120){
+        hue = 120
+    }
+
+    return {
+        color: `hsl(${hue}, 75%, 50%)`
+    }
 }
 
 getData()
