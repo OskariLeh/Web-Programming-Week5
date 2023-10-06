@@ -4,11 +4,11 @@ async function getData() {
     const result = await fetch(url)
     const data = await result.json()
 
-    const posUrl = " https://statfin.stat.fi/PxWeb/sq/4bb2c735-1dc3-4c5e-bde7-2165df85e65f "
+    const posUrl = "https://statfin.stat.fi/PxWeb/sq/4bb2c735-1dc3-4c5e-bde7-2165df85e65f "
     const posResult = await fetch(posUrl)
     const posData = await posResult.json()
 
-    const negUrl = "https://statfin.stat.fi/PxWeb/sq/944493ca-ea4d-4fd9-a75c-4975192f7b6e"
+    const negUrl = "https://statfin.stat.fi/PxWeb/sq/944493ca-ea4d-4fd9-a75c-4975192f7b6e "
     const negResult = await fetch(negUrl)
     const negData = await negResult.json()
 
